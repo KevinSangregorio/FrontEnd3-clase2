@@ -17,34 +17,21 @@
       const stock = ["Manzana", "Pera", "Naranja", "Banana", "Kiwi"];
       const sinStock = ["Durazno", "Cereza", "Ananá"];
 
-      function MyH1(props) {
-        return <h1>{props.children}</h1>;
-      }
-      function MyH2(props) {
-        return <h2>{props.children}</h2>;
-      }
-      function MyLi(props) {
-        return <li>{props.children}</li>;
-      }
-      function MyUl(props) {
-        return <ul>{props.children}</ul>;
-      }
-
       function MyDiv(props) {
         return (
           <div class={props.class}>
-            <MyH1>Lista de Productos en stock:</MyH1>
-            <MyUl>
+            <h1>Lista de Productos en stock:</h1>
+            <ul>
               {stock.map((fruta) => (
-                <MyLi>{fruta}</MyLi>
+                <li>{fruta}</li>
               ))}
-            </MyUl>
-            <MyH2>Productos en falta:</MyH2>
-            <MyUl>
+            </ul>
+            <h2>Productos en falta:</h2>
+            <ul>
               {sinStock.map((fruta) => (
-                <MyLi>{fruta}</MyLi>
+                <li>{fruta}</li>
               ))}
-            </MyUl>
+            </ul>
           </div>
         ); 
       }
