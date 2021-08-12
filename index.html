@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 2 - mesas</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const stock = ["Manzana", "Pera", "Naranja", "Banana", "Kiwi"];
+      const sinStock = ["Durazno", "Cereza", "Ananá"];
+
+      function MyH1(props) {
+        return <h1>{props.children}</h1>;
+      }
+
+      function MyH2(props) {
+        return <h2>{props.children}</h2>;
+      }
+
+      function MyLi(props) {
+        return <li>{props.children}</li>;
+      }
+
+      function MyUl(props) {
+        return <ul>{props.children}</ul>;
+      }
+
+      function MyDiv(props) {
+        return (
+          <div class={props.class}>
+            <MyH1>Lista de Productos en stock:</MyH1>
+            <MyUl>
+              {stock.map((fruta) => (
+                <MyLi>{fruta}</MyLi>
+              ))}
+            </MyUl>
+            <MyH2>Productos en falta:</MyH2>
+            <MyUl>
+              {sinStock.map((fruta) => (
+                <MyLi>{fruta}</MyLi>
+              ))}
+            </MyUl>
+          </div>
+        ); 
+      }
+
+      ReactDOM.render(<MyDiv class="productos" />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
